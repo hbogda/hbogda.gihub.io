@@ -89,13 +89,6 @@
         #item-3:checked ~ .cards #song-3 img {
             box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
         }
-       
-        #item-2:checked ~ .player #test {
-            transform: translateY(-40px);
-        }
-        #item-3:checked ~ .player #test {
-            transform: translateY(-80px);
-        }
         /* Nuevos estilos */
         .profile-container {
             display: flex;
@@ -145,7 +138,6 @@
         .profile-container > div:hover {
             flex: 0 0 250px;
             box-shadow: 1px 3px 15px #7645d8;
-            transform: translatey(-30px);
         }
         .profile-container > div:hover .content {
             opacity: 1;
@@ -156,6 +148,20 @@
             display: block;
             margin-top: 5px;
             font-size: 1.2rem;
+        }
+        /* Animación del h1 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            animation: fadeIn 1s ease-in-out;
         }
     </style>
 </head>
