@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KARINA PODETTI</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap">
     <style>
@@ -149,35 +149,16 @@
             margin-top: 5px;
             font-size: 1.2rem;
         }
-        /* Animación del h1 */
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-        @keyframes blink-caret {
-            from, to {
-                border-color: transparent;
-            }
-            50% {
-                border-color: white;
-            }
-        }
-        h1 {
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid white;
-            width: 0;
-            animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
+        /* Estilo para el logo */
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>KARINA PODETTI</h1>
+        <img src="ruta_al_logo.png" alt="Logo" class="logo">
         <input type="radio" name="slider" id="item-1" checked>
         <input type="radio" name="slider" id="item-2">
         <input type="radio" name="slider" id="item-3">
