@@ -61,21 +61,38 @@ body, html {
   }
 
   .container2 > div:nth-of-type(1) {
-      background: url("../images/digital1.png") no-repeat 50% / cover;
+      background: url("../images/fisico1.png") no-repeat 50% / cover;
   }
 
   .container2 > div:nth-of-type(2) {
-      background: url("../images/digital1.png") no-repeat 50% / cover;
+      background: url("../images/fisico2.png") no-repeat 50% / cover;
   }
 
   .container2 > div:nth-of-type(3) {
-      background: url("../images/digital1.png") no-repeat 50% / cover;
+      background: url("../images/fisico3.png") no-repeat 50% / cover;
   }
 
   .container2 > div:nth-of-type(4) {
-      background: url("../images/digital1.png") no-repeat 50% / cover;
+      background: url("../images/fisico4.png") no-repeat 50% / cover;
   }
 
+  .container2 > div:nth-of-type(5) {
+      background: url("../images/fisico5.png") no-repeat 50% / cover;
+  }
+
+  .container2 > div:nth-of-type(6) {
+      background: url("../images/fisico6.png") no-repeat 50% / cover;
+  }
+
+  .container2 > div:nth-of-type(7) {
+      background: url("../images/fisico7.png") no-repeat 50% / cover;
+  }
+  .container2 > div:nth-of-type(8) {
+      background: url("../images/fisico8.png") no-repeat 50% / cover;
+  }
+  .container2 > div:nth-of-type(9) {
+      background: url("../images/fisico9.png") no-repeat 50% / cover;
+  }
 
   .container2 > div .content {
       font-size: 1.5rem;
