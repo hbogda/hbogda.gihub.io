@@ -23,6 +23,7 @@ body, html {
   background: #000000;
   font-family: "Ubuntu Mono", monospace;
   font-weight: 400;
+    color: #FFFFFF;
 }
 
 .container-main {
@@ -32,8 +33,7 @@ body, html {
 }
 
 .section {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
+  background-color: #000000;
   margin: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -43,6 +43,8 @@ body, html {
 @media (max-width: 768px) {
   .section {
     margin: 10px 0;
+      background-color: #000000;
+
   }
 }
 
@@ -65,19 +67,19 @@ body, html {
 }
 
 .container2 > div:nth-of-type(1) {
-  background: url("https://images.pexels.com/photos/1845208/pexels-photo-1845208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat 50% / cover;
+  background: url("digital1.png") no-repeat 50% / cover;
 }
 
 .container2 > div:nth-of-type(2) {
-  background: url("https://images.pexels.com/photos/36469/woman-person-flowers-wreaths.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat 50% / cover;
+  background: url("digital1.png") no-repeat 50% / cover;
 }
 
 .container2 > div:nth-of-type(3) {
-  background: url("https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat 50% / cover;
+  background: url("digital1.png") no-repeat 50% / cover;
 }
 
 .container2 > div:nth-of-type(4) {
-  background: url("https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat 50% / cover;
+  background: url("digital1.png") no-repeat 50% / cover;
 }
 
 /* Repite para los otros elementos según sea necesario */
@@ -126,6 +128,7 @@ body, html {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color:#000000;
 }
 
 .custom-cards {
@@ -271,17 +274,148 @@ input[type="radio"] {
 #item-3:checked ~ .custom-player #test {
   transform: translateY(-80px);
 }
-iframe {
-  width: 100%;
-  height: 400px;
-  border: none;
+
+
+
+
+.gira {
+  height: 600px;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 500px 100px;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+  align-items: center;
+  justify-items: center;
 }
 
-@media (max-width: 768px) {
-  iframe {
-    height: 300px;
-  }
+main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
 }
+
+div.itemv {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: coral;
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+    pointer-events: auto; /* Esto habilita los eventos del puntero para los elementos individuales */
+}
+
+div.itemv:nth-of-type(1) {
+  --offset: 1;
+  background-color: #90f1ef;
+}
+div.itemv:nth-of-type(2) {
+  --offset: 2;
+  background-color: #ff70a6;
+}
+div.itemv:nth-of-type(3) {
+  --offset: 3;
+  background-color: #ff9770;
+}
+div.itemv:nth-of-type(4) {
+  --offset: 4;
+  background-color: #ffd670;
+}
+div.itemv:nth-of-type(5) {
+  --offset: 5;
+  background-color: #e9ff70;
+}
+
+input:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(1):checked ~ main#carousel {
+  --position: 1;
+}
+
+input:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ main#carousel {
+  --position: 2;
+}
+
+input:nth-of-type(3) {
+  grid-column: 4 /5;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ main#carousel {
+  --position: 3;
+}
+
+input:nth-of-type(4) {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ main#carousel {
+  --position: 4;
+}
+
+input:nth-of-type(5) {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(5):checked ~ main#carousel {
+  --position: 5;
+}
+/* Hacer visibles solo los radios con la clase .visible-radio */
+input[type="radio"].visible-radio {
+  display: inline-block;
+}
+
+/* Estilo opcional para los radios visibles */
+input[type="radio"].visible-radio + label {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+input[type="radio"].visible-radio:checked + label {
+  background-color: #1E90FF;
+  border-color: #999;
+}
+
+
+ .itemv {
+    width: 100%;
+    max-width: 600px; /* Puedes ajustar este valor según tus necesidades */
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .itemv video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
 </style>
 </head>
 <body>
@@ -344,7 +478,27 @@ iframe {
    <div class="section">
       <h2>Cuarta Sección</h2>
       <p>Contenido de la segunda sección.</p>
-      <iframe src="rotating-gallery.html"></iframe>
-   </div>
+<div class="gira">
+  <input type="radio" name="position" class="visible-radio" checked />
+  <input type="radio" name="position" class="visible-radio"/>
+  <input type="radio" name="position" class="visible-radio"/>
+  <input type="radio" name="position" class="visible-radio"/>
+  <input type="radio" name="position" class="visible-radio"/>
+  <main id="carousel">
+    <div class="itemv">
+    </div>
+    <div class="itemv">
+		<video width="320" height="240" controls>
+		<source src="3378920531033554104.mp4" type="video/mp4"></video>
+	</div>
+	<div class="itemv">
+		<video width="320" height="240" controls>
+		<source src="3391510374090626305.mp4" type="video/mp4"></video>
+	</div>
+    <div class="itemv">qw</div>
+    <div class="itemv"></div>
+    <main>
+</div>  
+ </div>
 </body>
 </html>
